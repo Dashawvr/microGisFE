@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ApiPrefixInterceptor} from './interceptors/api-prefix.interceptor';
 import {MatButtonModule} from '@angular/material/button';
