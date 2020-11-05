@@ -1,0 +1,36 @@
+<div class="d-flex flex-column w-100">
+  <div>
+    <video #video class="box-shadow w-100"></video>
+  </div>
+
+
+  <div class="d-flex justify-content-center mt-3 flex-sm-wrap">
+    <button mat-stroked-button
+            color="primary"
+            class="m-1"
+            (click)="startRecording()"
+            [disabled]="isRecording">
+      <mat-icon>fiber_manual_record</mat-icon>
+      Record
+    </button>
+    <button mat-stroked-button
+            color="primary"
+            class="m-1"
+            (click)="stopRecording()"
+            [disabled]="!isRecording">
+      <mat-icon>stop</mat-icon>
+      Stop
+    </button>
+    <button mat-stroked-button
+            color="primary"
+            class="m-1"
+            (click)="saveBlob()"
+            [disabled]="isRecording || !isRecorded">
+      <mat-icon>save_alt</mat-icon>
+      Save
+    </button>
+  </div>
+
+</div>
+
+

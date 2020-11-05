@@ -1,0 +1,33 @@
+<div class="d-flex w-100">
+  <mat-card class="w-25">
+    <app-record-rtc
+      (saveBlobEvent)="saveVideo($event)"
+    ></app-record-rtc>
+  </mat-card>
+
+  <div class="w-75 overflow-auto d-flex flex-wrap" *ngIf="files">
+    <mat-card
+      *ngFor="let file of files"
+      class="m-1"
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{file.name}}</mat-card-title>
+        <mat-card-subtitle>{{file.document_type}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <video width="320" height="240" controls crossorigin="anonymous">
+          <source [src]="'http://localhost:5000/public/'+ file.path" type="video/mp4">
+        </video>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="warn"
+        (click)="delete(file._id)"
+        >
+          <mat-icon>delete_outline</mat-icon>
+          DELETE
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
